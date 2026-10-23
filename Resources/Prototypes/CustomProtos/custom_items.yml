@@ -1,0 +1,567 @@
+﻿# Naming System:
+
+# Custom Content Prefix: in this case, it is always "Awsm". Prepended to the whole ID for easy searching, spawning, and testing, as well as to ensure no conflicts with upstream merges or vanilla items.
+# Requester: Part of the item prefix. First name of the character who will be making primary use of this item. Should be 4 or 5 letters, depending on the context.
+# Root Item ID: Follows base game naming scheme. Usually just a slight alteration of the item it is based on.
+# Suffix: Usually not used. In the case of joke or admin items, the suffix "Admeme" should be used.
+# Name: Should be the item's name, with the intended user's name prepended before it. May have modifications to differentiate it from vanilla and to express what has been modified.
+# Description: Usually a modification of the base item. Often contains lore and roleplay information. Some information from vanilla should be removed or rewritten to avoid redundancy.
+
+# Example: 
+# name: Annabelle's Harm Baton
+# id: AwsmBelleHarmbaton
+# description: A harm baton for harming people with. Modified for use by Annabelle.
+
+# The base item in this case is the stun baton (Stunbaton). 
+# This item was suggested by Emrald for use by Annabelle, thus "Annabelle's" is prepended before the item name.
+# This item is modified to do more damage when deactivated, and Emrald had picked the name Harm Baton, so the name and Root ID are changed from stun baton (Stunbaton) to Harm Baton (Harmbaton).
+# Yes I know my item name capitalization is different than the base items, as mine are usually capitalized evey word, as vanilla items are typically all lowercase. I just think it looks better, alright?
+# Awsm is prepended to the ID for easy identification and categorization of custom items.
+# Belle is added before the Root ID to signify that this item belongs to Annabelle. (Shortened to Belle to differentiate it from Anna's items.)
+# The Root Item ID, as previously mentioned, is changed to express the differences in the item. 
+# The base stun baton's description is "A stun baton for incapacitating people with. Has advanced wrist strap technology to prevent cadets accidentally dropping it."
+# The second sentence is removed to avoid redundancy, stun and incapacitating are substituted with harm and harming, and it is noted that it is modified for specific usage by Annabelle.
+
+# Exceptions:
+
+# In the case of joke items, the Name and Description rules may be ignored.
+# In the case of items with no specific intended user, the Requester field may be ignored, as the Custom Content Prefix still ensures proper categorization.
+
+
+
+
+
+# Requested by Elliott
+- type: entity
+  parent: BaseItem
+  id: AwsmElliGoldRingDiamondWedding
+  name: Elliott's Wedding Ring
+  description: Someone has been taking good care of this.
+  components:
+  - type: Clothing
+    slots: [ gloves, neck ]
+    sprite: Custom/ring.rsi
+    clothingVisuals:
+      hand:
+      - state: equipped-HAND
+  - type: Sprite
+    sprite: Custom/ring.rsi
+    layers:
+      - state: ring
+        color: "#ffc833"
+      - state: gem
+        color: "#c1ffff"
+  - type: Appearance
+  - type: Item
+    size: Tiny
+  - type: Tag
+    tags:
+    - Ring
+  - type: StaticPrice
+    price: 9999999
+  - type: Insulated
+
+# Requested by Elliott
+- type: entity
+  parent: ClothingBackpackSatchelAdmin
+  id: AwsmElliClothingBackpackSatchelAdminHarmpack
+  name: Elliott's H.A.R.M.P.A.C.K. of Administration
+  suffix: Admin
+  description: You don't know how she made this, but it's amazing.
+  components:
+  - type: Clothing
+    slots: [ back, belt ]
+  - type: Storage
+    maxItemSize: Colossal
+    grid:
+    - 0,0,23,11
+  - type: ExtraHandsEquipment
+    hands:
+      extra_hand_1:
+        location: Middle
+      extra_hand_2:
+        location: Middle
+  - type: Item
+    size: Tiny
+
+# Requested by Daniella
+- type: entity
+  name: Shivvy
+  parent: UraniumShiv
+  id: AwsmUraniumShivvy
+  description: A strange being with good intentions.
+
+# Requested by nobody. Nobody wanted this.
+- type: entity
+  parent: AwsmElliClothingBackpackSatchelAdminHarmpack
+  id: AwsmElliClothingBackpackSatchelAdminHarmpackAdmeme
+  name: TOO MANY FUCKING HANDS
+  suffix: Admin
+  description: WHAT THE FUCK!
+  components:
+  - type: ExtraHandsEquipment
+    hands:
+      extra_hand_1:
+        location: Middle
+      extra_hand_2:
+        location: Middle
+      extra_hand_3:
+        location: Middle
+      extra_hand_4:
+        location: Middle
+      extra_hand_5:
+        location: Middle
+      extra_hand_6:
+        location: Middle
+      extra_hand_7:
+        location: Middle
+      extra_hand_8:
+        location: Middle
+      extra_hand_9:
+        location: Middle
+      extra_hand_10:
+        location: Middle
+      extra_hand_11:
+        location: Middle
+      extra_hand_12:
+        location: Middle
+      extra_hand_13:
+        location: Middle
+      extra_hand_14:
+        location: Middle
+      extra_hand_15:
+        location: Middle
+      extra_hand_16:
+        location: Middle
+  - type: Item
+    size: Tiny
+
+# Requested by Annabelle
+- type: entity
+  parent: [ BaseXenoborgContraband, CombatKnife ]
+  id: AwsmBelleBioKnife
+  name: Annabelle's Bio Knife
+  description: Forged by Elliott at the request of Annabelle.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/bioknife.rsi
+    state: icon
+  - type: MeleeWeapon
+    attackRate: 2.0
+    damage:
+      types:
+        Slash: 15
+        Caustic: 15
+        Radiation: 15
+        Cellular: 15
+        Shock: 15
+  - type: Item
+    sprite: Objects/Weapons/Melee/bioknife.rsi
+  - type: BonusDamageOnMetabolism
+    selectedMetabolizer: Human
+    excludedMetabolizers:
+    - Vox # Their biology is resistant to this!
+    # The rest of these are just so we don't clog up the menu with useless items.
+    - Bloodsucker
+    - Dragon
+    - Changeling
+    damage:
+      types:
+        Slash: 5
+        Caustic: 5
+        Radiation: 5
+        Cellular: 5
+        Shock: 5
+
+# Requested by Annabelle
+- type: entity
+  name: Annabelle's Pistol
+  parent: [BaseWeaponBatterySmall, BaseDeathSquadContraband]
+  id: AwsmBelleWeaponPulsePistol
+  description: A state-of-the-art energy weapon modified for use by Annabelle.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Item
+    storedOffset: -2,-5
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5
+    zeroVisible: false
+  - type: Appearance
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/Battery/pulse_pistol.rsi
+  - type: Gun
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/laser3.ogg
+  - type: BatteryAmmoProvider
+    proto: AwsmPulsePower
+    fireCost: 200
+  - type: Battery
+    maxCharge: 2000
+    startingCharge: 2000
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50
+  - type: Tag
+    tags:
+    - Sidearm
+    - LaserWeapon
+
+# Requested by Annabelle
+- type: entity
+  parent: Pulse
+  id: AwsmPulsePower
+  name: blue super high-energy laser ray
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: HitscanBasicDamage
+    damage:
+      types:
+        Heat: 35
+        Caustic: 5
+        Shock: 5
+        Radiation: 5
+        Cellular: 5
+  - type: HitscanBasicVisuals
+    muzzleFlash:
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: muzzle_beam_xenoborg_heavy
+    travelFlash:
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: beam_xenoborg_heavy
+    impactFlash:
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles.rsi
+      state: impact_beam_xenoborg_heavy
+
+# Requested by Anna
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseCommandContraband]
+  id: AwsmAnnaClothingOuterHardsuitSecurityRed
+  name: Anna's Hardsuit
+  description: A special suit modified for use by Anna. Greatly reduced in weight and size, and has nanofibre technology borrowed from the Ninja. Barely sits half an inch off your body, and is much softer too. Cozy! Now go snuggle your girlfriend.
+  components:
+  - type: Sprite
+    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+  - type: Clothing
+    sprite: Clothing/OuterClothing/Hardsuits/security-red.rsi
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.4
+        Slash: 0.3
+        Piercing: 0.3
+        Heat: 0.6
+        Radiation: 0.3
+        Caustic: 0.4
+  - type: ClothingSpeedModifier
+    walkModifier: 1.3
+    sprintModifier: 1.3
+  - type: HeldSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1
+  - type: ToggleableClothing
+    clothingPrototype: AwsmAnnaClothingHeadHelmetHardsuitSecurityRed
+  - type: StealTarget
+    stealGroup:
+    - HeadHardsuit
+
+# Requested by Anna
+- type: entity
+  parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
+  id: AwsmAnnaClothingHeadHelmetHardsuitSecurityRed
+  name: Anna's Hardsuit Helmet
+  description: Modified hardsuit helmet belonging to Anna.
+  components:
+  - type: Sprite
+    sprite: Clothing/Head/Hardsuits/security-red.rsi
+  - type: PointLight
+    color: "#ffeead"
+  - type: PressureProtection
+    highPressureMultiplier: 0.45
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+
+#Requested by Annabelle
+- type: entity
+  name: Annabelle's Harm Baton
+  parent: [BaseItem, BaseSecurityContraband]
+  id: AwsmBelleHarmbaton
+  description: A harm baton for harming people with. Modified for use by Annabelle.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/stunbaton.rsi
+    layers:
+    - state: stunbaton_off
+      map: [ "enum.ToggleableVisuals.Layer" ]
+  - type: ItemToggleExaminableStatus
+  - type: ItemToggle
+    onActivate: false
+    soundActivate:
+      collection: sparks
+      params:
+        variation: 0.250
+    soundDeactivate:
+      collection: sparks
+      params:
+        variation: 0.250
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+      params:
+        variation: 0.250
+  - type: ItemTogglePrefix
+    prefixOn: on
+    prefixOff: off
+  - type: ItemToggleMeleeWeapon
+    activatedDamage:
+      types:
+        Blunt: 0
+        Structural: 0
+  - type: MeleeWeapon
+    attackRate: 1.3
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Blunt: 20
+        Structural: 20
+    bluntStaminaDamageFactor: 2.0
+    angle: 60
+    animation: WeaponArcThrust
+    undamagedAlertThreshold: 0
+  - type: MeleeBatteryHitsLeft
+  - type: StaminaDamageOnHitRequiresToggle
+  - type: StaminaDamageOnHit
+    damage: 40
+    sound: /Audio/Weapons/egloves.ogg
+  - type: StaminaDamageOnCollide
+    damage: 40
+    sound: /Audio/Weapons/egloves.ogg
+  - type: LandAtCursor # it deals stamina damage when thrown
+  - type: UseDelay
+  - type: Item
+    heldPrefix: off
+    size: Normal
+  - type: Clothing
+    sprite: Objects/Weapons/Melee/stunbaton.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: DisarmMalus
+    malus: 0.225
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+     enum.ToggleableVisuals.Enabled:
+        enum.ToggleableVisuals.Layer:
+          True: {state: stunbaton_on}
+          False: {state: stunbaton_off}
+  - type: StaticPrice
+    price: 80
+  - type: Riggable
+  - type: Explosive
+    explosionType: Default
+    intensitySlope: 1.5
+    maxIntensity: 200
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 100
+      Plastic: 100
+  - type: GuideHelp
+    guides:
+    - Security
+    - Antagonists
+  - type: Tag
+    tags:
+    - Stunbaton
+  - type: PreventForcedThrow
+
+# Requested by Annabelle
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: AwsmBelleClothingUniformBluefitSkirtBra
+  name: Annabelle's Outfit
+  suffix: Skirt with Bra
+  description: A moderately revealing bra with a signature cyan skirt. It doesn't fit you.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/procedural.rsi
+    layers:
+      - state: base_leg_skirt
+        color: "#169C9C"
+      - state: base_torso_bra
+        color: "#B02E26"
+      - state: decor_torso_bra4
+        color: "#3C44AA"
+  - type: Clothing
+    sprite: Clothing/Uniforms/procedural.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: base_leg_skirt
+        color: "#169C9C"
+      - state: base_torso_bra
+        color: "#B02E26"
+      - state: decor_torso_bra4
+        color: "#3C44AA"
+
+# Requested by Annabelle
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: AwsmBelleClothingUniformBluefitSkirt
+  name: Annabelle's Outfit
+  suffix: Skirt
+  description: A topless outfit with a signature cyan skirt. It doesn't fit you.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/procedural.rsi
+    layers:
+      - state: base_leg_skirt
+        color: "#169C9C"
+  - type: Clothing
+    sprite: Clothing/Uniforms/procedural.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: base_leg_skirt
+        color: "#169C9C"
+        
+# Requested by Annabelle
+- type: entity
+  parent: ClothingUniformBase
+  id: AwsmBelleClothingUniformBluefitPantsBra
+  name: Annabelle's Outfit
+  suffix: Pants with Bra
+  description: A moderately revealing bra with signature cyan pants. It doesn't fit you.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/procedural.rsi
+    layers:
+      - state: base_leg_standard
+        color: "#169C9C"
+      - state: base_torso_bra
+        color: "#B02E26"
+      - state: decor_torso_bra4
+        color: "#3C44AA"
+  - type: Clothing
+    sprite: Clothing/Uniforms/procedural.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: base_leg_standard
+        color: "#169C9C"
+      - state: base_torso_bra
+        color: "#B02E26"
+      - state: decor_torso_bra4
+        color: "#3C44AA"
+
+# Requested by Annabelle
+- type: entity
+  parent: ClothingUniformBase
+  id: AwsmBelleClothingUniformBluefitPants
+  name: Annabelle's Outfit
+  suffix: Pants
+  description: A topless outfit with signature cyan pants. It doesn't fit you.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/procedural.rsi
+    layers:
+      - state: base_leg_standard
+        color: "#169C9C"
+  - type: Clothing
+    sprite: Clothing/Uniforms/procedural.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: base_leg_standard
+        color: "#169C9C"
+
+# Requested by Anna
+- type: entity
+  parent: ClothingUniformBase
+  id: AwsmAnnaClothingUniformRedfitPantsBra
+  name: Anna's Outfit
+  suffix: Pants with Bra
+  description: A modest outfit with a striking red accent. Highlights her ass nicely.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/procedural.rsi
+    layers:
+      - state: base_leg_standard
+        color: "#1D1D21"
+      - state: base_torso_bra
+        color: "#1D1D21"
+      - state: decor_torso_bra2
+        color: "#B02E26"
+  - type: Clothing
+    sprite: Clothing/Uniforms/procedural.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: base_leg_standard
+        color: "#1D1D21"
+      - state: base_torso_bra
+        color: "#1D1D21"
+      - state: decor_torso_bra2
+        color: "#B02E26"
+        
+# Requested by Anna
+- type: entity
+  parent: ClothingUniformBase
+  id: AwsmAnnaClothingUniformRedfitPants
+  name: Anna's Outfit
+  suffix: Pants
+  description: A topless yet modest outfit. Highlights her ass nicely.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/procedural.rsi
+    layers:
+      - state: base_leg_standard
+        color: "#1D1D21"
+  - type: Clothing
+    sprite: Clothing/Uniforms/procedural.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: base_leg_standard
+        color: "#1D1D21"
+
+# Requested by Elliott
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: AwsmElliClothingUniformSwimsuit
+  name: Elliott's Swimsuit
+  description: A revealing swimsuit that doesn't leave much to the imagination. It makes you glad she's finally confident in her body. Seems to only fit Vulpkanins.
+  components:
+  - type: Sprite
+    sprite: Mobs/Customization/undergarments.rsi
+    layers:
+      - state: classic_vulpkanin
+        color: "#F38BAA"
+      - state: satin_vulpkanin
+        color: "#3AB3DA"
+  - type: Clothing
+    sprite: Mobs/Customization/undergarments.rsi
+    clothingVisuals:
+      jumpsuit:
+      - state: classic_vulpkanin
+        color: "#F38BAA"
+      - state: satin_vulpkanin
+        color: "#3AB3DA"
+        
