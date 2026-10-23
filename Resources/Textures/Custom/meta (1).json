@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "license": "whatever dude its 3 pixels",
+  "copyright": "idfk man",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "equipped-HAND",
+      "directions": 4
+    },
+    {
+      "name": "ring"
+    },
+    {
+      "name": "gem"
+    }
+  ]
+}
